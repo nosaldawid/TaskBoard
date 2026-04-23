@@ -9,8 +9,8 @@
     {{title}}
 
     <ul>
-        @for (task of tasks; track task.id) {
-            <li class="task-item">
+        @for (task of tasks(); track task.id) {
+            <!-- <li class="task-item">
                 <strong>{{task.title}}</strong>
                 @if (task.isDone) {
                     <span class="badge done">Zrobione</span>
@@ -19,14 +19,16 @@
                     <span class="badge pending">W toku</span>
                 }
                 <p>{{task.description}}</p>
-            </li>
+            </li> -->
+            
+            <app-task-item [task]="task"></app-task-item>
         }
         <!-- @empty {
-            <h1>Pusta lista!</h1>
+            <h1>Brak zadań do wyświetlenia</h1>
         } -->
     </ul>
 
-    @if(tasks.length === 0){
+    @if(tasks().length === 0){
         <p>Brak zadań do wyświetlenia</p>
     }
 </section>

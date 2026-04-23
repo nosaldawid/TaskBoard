@@ -1,0 +1,12 @@
+<li class="task-item">
+    <strong>{{task().title}}</strong>
+
+    @if(task().isDone){
+        <span class="badge done">Zrobione</span>
+    }
+    @else {
+        <span class="badge pending">W toku</span>
+    }
+
+    <p>{{task().description}}</p>
+</li>

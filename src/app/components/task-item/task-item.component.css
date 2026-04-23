@@ -1,9 +1,3 @@
-.task-list {
-  max-width: 600px;
-  margin: 2rem auto;
-  font-family: system-ui, sans-serif;
-}
-
 .task-item {
   padding: 1rem;
   margin-bottom: 0.5rem;
@@ -27,8 +21,4 @@
 .badge.pending {
   background: #fff3cd;
   color: #856404;
-}
-
-ul {
-  padding: 0;
 }
