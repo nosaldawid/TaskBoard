@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { Task } from '../../models/task';
 
 @Component({
@@ -12,4 +12,11 @@ export class TaskItemComponent {
   // input() - sposób definiowania wejść komponentu
   // W szablonie odczytujemy wartość jak funkcję: task().title
   task = input.required<Task>();
+
+  toogle = output<void>();
+
+  // Wysłanie zdarzenia do rodzica
+  onClick(): void {
+    this.toogle.emit();
+  }
 }

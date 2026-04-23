@@ -6,11 +6,15 @@
 -->
 
 <section class="task-list">
-    {{title}}
+    <h1>{{title}}</h1>
+
+    <p class="stats">
+        Ukończono: <strong>{{doneCount()}}</strong> z {{totalCount()}}
+    </p>
 
     <ul>
         @for (task of tasks(); track task.id) {
-            <!-- <li class="task-item">
+        <!-- <li class="task-item">
                 <strong>{{task.title}}</strong>
                 @if (task.isDone) {
                     <span class="badge done">Zrobione</span>
@@ -20,8 +24,12 @@
                 }
                 <p>{{task.description}}</p>
             </li> -->
-            
-            <app-task-item [task]="task"></app-task-item>
+
+        <!-- 
+            (toggle)="onToggle(task.id)" - event binding na output dziecka
+            Gdy TaskItemComponent wywoła toogle.emit(), wywoła się metoda z komponentu 
+        -->
+        <app-task-item [task]="task" (toogle)="onToggle(task.id)"></app-task-item>
         }
         <!-- @empty {
             <h1>Brak zadań do wyświetlenia</h1>
@@ -29,6 +37,6 @@
     </ul>
 
     @if(tasks().length === 0){
-        <p>Brak zadań do wyświetlenia</p>
+    <p>Brak zadań do wyświetlenia</p>
     }
 </section>

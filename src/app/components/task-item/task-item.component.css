@@ -4,6 +4,21 @@
   border: 1px solid #ddd;
   border-radius: 8px;
   list-style: none;
+  cursor: pointer;
+  transition: opacity 0.2s, background-color 0.2s;
+}
+
+.task-item:hover{
+  background-color: #f9f9f9;
+}
+
+.task-item.done{
+  opacity: 0.6;
+  background-color: #f0f8f0;
+}
+
+.task-item.done strong{
+  text-decoration: line-through;
 }
 
 .badge {
