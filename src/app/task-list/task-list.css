@@ -1,0 +1,34 @@
+.task-list {
+  max-width: 600px;
+  margin: 2rem auto;
+  font-family: system-ui, sans-serif;
+}
+
+.task-item {
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  list-style: none;
+}
+
+.badge {
+  margin-left: 0.5rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.badge.done {
+  background: #d4edda;
+  color: #155724;
+}
+
+.badge.pending {
+  background: #fff3cd;
+  color: #856404;
+}
+
+ul {
+  padding: 0;
+}

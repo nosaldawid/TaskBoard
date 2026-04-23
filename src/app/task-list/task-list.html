@@ -1,0 +1,32 @@
+<!--
+   - Interpolation:         {{ expression }}
+   - Loops:                 @if, @for 
+   - Property binding:      [property]="expression"
+   - Event binding:         (event)="handler()"
+-->
+
+<section class="task-list">
+    {{title}}
+
+    <ul>
+        @for (task of tasks; track task.id) {
+            <li class="task-item">
+                <strong>{{task.title}}</strong>
+                @if (task.isDone) {
+                    <span class="badge done">Zrobione</span>
+                }
+                @else {
+                    <span class="badge pending">W toku</span>
+                }
+                <p>{{task.description}}</p>
+            </li>
+        }
+        <!-- @empty {
+            <h1>Pusta lista!</h1>
+        } -->
+    </ul>
+
+    @if(tasks.length === 0){
+        <p>Brak zadań do wyświetlenia</p>
+    }
+</section>
