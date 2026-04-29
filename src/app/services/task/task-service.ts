@@ -53,4 +53,24 @@ export class TaskService {
       )
     );
   }
+
+  // Omit<Task, 'id' | 'isDone'> to typ pomocniczy TypeScript, który umożliwia pominięcie określonych pól
+  // w tym wypadku pól 'id' i 'isDone'
+  addTask(input: Omit<Task, 'id' | 'isDone'>) {
+    this._tasks.update( current => {
+        const nextId = current.length === 0 ? 1 : Math.max(...current.map(t => t.id)) + 1;
+
+        const newTask: Task = {
+          id: nextId,
+          title: input.title,
+          description: input.description,
+          isDone: false
+        };
+
+        // Zwróć nową tabilę z dodanym elementem
+        // Pomiń current.push() aby nie modyfikować orginału
+        return [...current, newTask];
+      }
+    );
+  }
 }

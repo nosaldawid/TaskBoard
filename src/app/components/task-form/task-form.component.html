@@ -1,0 +1,26 @@
+<form class="task-form" (submit)="onSubmit()">
+  <h2>Add new task item</h2>
+
+  <div class="field">
+    <label for="title">Title</label>
+    <input id="title" name="title" type="text" [(ngModel)]="title" placeholder="Task title.." />
+  </div>
+
+  <div class="field">
+    <label for="description">Description</label>
+    <textarea
+      id="description"
+      name="description"
+      [(ngModel)]="description"
+      placeholder="Task details.."
+      rows="3"
+    >
+    </textarea>
+  </div>
+
+  <button type="submit" [disabled]="!isValid()">Add task</button>
+
+  @if (!isValid()) {
+    <p class="hint">To add task, enter valid both fields.</p>
+  }
+</form>
