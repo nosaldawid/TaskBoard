@@ -2,10 +2,10 @@
     <strong>{{task().title}}</strong>
 
     @if(task().isDone){
-    <span class="badge done">Zrobione</span>
+    <span class="badge done">Done</span>
     }
     @else {
-    <span class="badge pending">W toku</span>
+    <span class="badge pending">In progress</span>
     }
 
     <p>{{task().description}}</p>

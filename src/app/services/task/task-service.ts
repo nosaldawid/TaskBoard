@@ -16,20 +16,20 @@ export class TaskService {
   private readonly _tasks = signal<Task[]>([
     {
       id: 1,
-      title: 'Podstawy Angulara',
-      description: 'Komponenty, szablony, binding',
+      title: 'Angular basics',
+      description: 'Components, Templates, Bingind',
       isDone: false,
     },
     {
       id: 2,
-      title: 'Postawienie projektu',
-      description: 'Uruchoemienie dev server',
+      title: 'First project',
+      description: 'Run dev server',
       isDone: true,
     },
     {
       id: 3,
-      title: 'Stworzenie komponentu',
-      description: 'Wygenerowanie komponentu i wyświetlenie listy',
+      title: 'Create component',
+      description: 'Generate component and show list',
       isDone: false,
     },
   ]);

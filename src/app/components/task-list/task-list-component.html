@@ -9,7 +9,7 @@
     <h1>{{title}}</h1>
 
     <p class="stats">
-        Ukończono: <strong>{{doneCount()}}</strong> z {{totalCount()}}
+        Completed: <strong>{{doneCount()}}</strong> of {{totalCount()}}
     </p>
 
     <ul>
@@ -32,11 +32,11 @@
         <app-task-item [task]="task" (toogle)="onToggle(task.id)"></app-task-item>
         }
         <!-- @empty {
-            <h1>Brak zadań do wyświetlenia</h1>
+            <h1>There are no tasks to display</h1>
         } -->
     </ul>
 
     @if(tasks().length === 0){
-    <p>Brak zadań do wyświetlenia</p>
+    <p>There are no tasks to display</p>
     }
 </section>
