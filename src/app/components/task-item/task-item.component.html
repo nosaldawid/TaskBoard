@@ -1,12 +1,39 @@
-<li class="task-item" [class.done]="task().isDone" (click)="onClick()">
-    <strong>{{task().title}}</strong>
+<li
+  class="task-item"
+  [class.done]="task().isDone"
+  [class.editing]="isEditing()"
+  (click)="onClick()"
+>
+  <!--
+    #editInput - template reference variable
+    $event to wbudowana zmienna Angulara reprezentująca obiekt zdarzenia.
+    blur - gdy input traci foucs
+  -->
 
-    @if(task().isDone){
+  @if (isEditing()) {
+    <input
+      #editInput
+      type="text"
+      class="edit-input"
+      [(ngModel)]="draftTitle"
+      (click)="$event.stopPropagation()"
+      (blur)="saveEdit()"
+      (keydown)="onKeyDown($event)"
+    />
+  } @else {
+    <!-- title - toolip -->
+    <strong class="title" title="Click double to edit" (dblclick)="startEditing($event)">{{
+      task().title
+    }}</strong>
+  }
+
+  @if (task().isDone) {
     <span class="badge done">Done</span>
-    }
-    @else {
+  } @else {
     <span class="badge pending">In progress</span>
-    }
+  }
 
-    <p>{{task().description}}</p>
+  <p>{{ task().description }}</p>
+
+  <button type="button" class="remove-btn" (click)="onRemove($event)">Remove task</button>
 </li>

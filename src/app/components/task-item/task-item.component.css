@@ -1,24 +1,51 @@
 .task-item {
+  position: relative;
   padding: 1rem;
+  padding-right: 3rem;
   margin-bottom: 0.5rem;
   border: 1px solid #ddd;
   border-radius: 8px;
   list-style: none;
   cursor: pointer;
-  transition: opacity 0.2s, background-color 0.2s;
+  transition:
+    opacity 0.2s,
+    background-color 0.2s;
 }
 
-.task-item:hover{
+.task-item:hover {
   background-color: #f9f9f9;
 }
 
-.task-item.done{
+.task-item.done {
   opacity: 0.6;
   background-color: #f0f8f0;
 }
 
-.task-item.done strong{
+.task-item.done .title {
   text-decoration: line-through;
+}
+
+.task-item.editing {
+  background-color: #fffbe6;
+  border-color: #ffc107;
+}
+
+.title {
+  cursor: text;
+}
+
+.edit-input {
+  width: 60%;
+  padding: 0rem 0.5rem;
+  border-radius: 4px;
+  font-size: inherit;
+  font-weight: bold;
+  font-family: inherit;
+}
+
+.edit-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.2);
 }
 
 .badge {
@@ -36,4 +63,27 @@
 .badge.pending {
   background: #fff3cd;
   color: #856404;
+}
+
+.remove-btn {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  padding: 0.3rem 0.5rem;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.2s, background 0.2s, border-color 0.2s;
+}
+
+.task-item:hover .remove-btn {
+  opacity: 1;
+}
+
+.remove-btn:hover {
+  background: #ffe5e5;
+  border-color: #f5c6cb;
 }

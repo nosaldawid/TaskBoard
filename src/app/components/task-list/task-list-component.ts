@@ -27,4 +27,12 @@ export class TaskListComponent {
   onToggle(id: number): void {
     this.taskService.toogleDone(id);
   }
+
+  onRemove(id: number) : void{
+    this.taskService.removeTask(id);
+  }
+
+  onTitleChange(id: number, newTitle: string) : void{
+    this.taskService.updateTask(id, {title: newTitle});
+  }
 }
