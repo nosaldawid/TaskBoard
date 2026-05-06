@@ -1,11 +1,13 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { TaskListComponent } from './components/task-list/task-list-component';
-import { TaskFormComponent } from "./components/task-form/task-form.component";
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, TaskListComponent, TaskFormComponent],
+  
+  // RouterOutlet      — slot, w którym Angular renderuje aktywną stronę.
+  // RouterLink        — dyrektywa <a routerLink="/tasks">.
+  // RouterLinkActive  — dyrektywa nadająca klasę CSS aktywnemu linkowi.  
+  imports: [RouterOutlet, RouterLink, RouterLinkActive],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

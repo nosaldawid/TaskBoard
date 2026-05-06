@@ -1,4 +1,27 @@
-<main>
-    <app-task-form></app-task-form>
-    <app-task-list></app-task-list>
+<header class="app-header">
+  <h1 class="app-logo">{{ title() }}</h1>
+
+  <!--
+    routerLinkActive="active" — Angular dynamicznie dodaje klasę "active" do tego linku, gdy aktualny URL pasuje do routerLink
+    [routerLinkActiveOptions]="{ exact: true }" — wymusza dokładne dopasowanie.
+    Bez tego /tasks/42 byłoby uznane za "aktywne" dla linku /tasks
+    (bo /tasks/42 zaczyna się od /tasks).
+-->
+  <nav
+    class="app-nav"
+    routerLink="/tasks"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    <a href="">Tasks</a>
+  </nav>
+</header>
+
+<main class="app-main">
+  <!--
+        <router-outlet> - wstrzyknięcie komponent odpowiadającego aktualnej trasie
+        URL /tasks  -  <app-tasks-page>
+        URL /tasks/5 - <app-task-detail-page>
+    -->
+  <router-outlet></router-outlet>
 </main>

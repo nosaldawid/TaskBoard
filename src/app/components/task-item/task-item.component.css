@@ -87,3 +87,26 @@
   background: #ffe5e5;
   border-color: #f5c6cb;
 }
+
+.detail-link {
+  position: absolute;
+  top: 2.75rem;
+  right: 0.75rem;
+  padding: 0.3rem 0.5rem;
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.2s, background 0.2s, border-color 0.2s;
+}
+
+.task-item:hover .detail-link {
+  opacity: 1;
+}
+
+.detail-link:hover {
+  background: #e7f3ff;
+  border-color: #b3d7ff;
+}

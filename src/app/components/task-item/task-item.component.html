@@ -22,9 +22,9 @@
     />
   } @else {
     <!-- title - toolip -->
-    <strong class="title" title="Click double to edit" (dblclick)="startEditing($event)">{{
-      task().title
-    }}</strong>
+    <strong class="title" title="Click double to edit" (dblclick)="startEditing($event)">
+      {{ task().title }}</strong
+    >
   }
 
   @if (task().isDone) {
@@ -35,5 +35,8 @@
 
   <p>{{ task().description }}</p>
 
+  <a class="detail-link" [routerLink]="['/tasks', task().id]" (click)="$event.stopPropagation()"
+    >Show details</a
+  >
   <button type="button" class="remove-btn" (click)="onRemove($event)">Remove task</button>
 </li>

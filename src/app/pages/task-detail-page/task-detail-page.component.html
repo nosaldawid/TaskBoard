@@ -1,0 +1,29 @@
+@if (task(); as t) {
+  <article class="task-detail">
+    <!-- 
+        RouterLink przy kliknięciu zmienia URL bez przełaodowania - SPA
+        przy href="/tasks" przeglądarka przeładowałaby stronę
+    -->
+    <a routerLink="/tasks" class="back-link">Back to list</a>
+
+    <h1>{{ t.title }}</h1>
+
+    <p class="status">
+      Status:
+      @if (t.isDone) {
+        <span class="badge done">Done</span>
+      } @else {
+        <span class="badge pending">In progress</span>
+      }
+    </p>
+
+    <h2>Description</h2>
+    <p class="description">{{ t.description }}</p>
+    <p class="meta">Id task: {{ t.id }}</p>
+  </article>
+} @else {
+  <div class="not-found">
+    <h1>Task with id: {{ id() }} is missing</h1>
+    <a routerLink="/tasks" class="back-link">Back to list</a>
+  </div>
+}

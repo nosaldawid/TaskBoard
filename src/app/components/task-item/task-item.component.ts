@@ -1,10 +1,11 @@
 import { Component, effect, ElementRef, input, output, signal, viewChild } from '@angular/core';
 import { Task } from '../../models/task';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-task-item',
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './task-item.component.html',
   styleUrl: './task-item.component.css',
   standalone: true,
